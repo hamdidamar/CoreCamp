@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Shared.Entities;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Entities.Concrete
 {
-    public class Category
+    public class Category : IEntity
     {
         [Key]
         public int CategoryId { get; set; }
@@ -15,5 +16,6 @@ namespace Entities.Concrete
         public string CategoryDescription { get; set; }
         public bool CategoryStatus { get; set; }
 
+        public ICollection<Blog> Blogs { get; set; }
     }
 }

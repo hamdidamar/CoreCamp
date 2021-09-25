@@ -37,7 +37,7 @@ namespace DataAccess.Concrete
                 deletedEntity.State = EntityState.Deleted;
                 context.SaveChanges();
 
-                return new SuccessResult("deleted");
+                return new SuccessResult("Deleted");
             }
         }
 

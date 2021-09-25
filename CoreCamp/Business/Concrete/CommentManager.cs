@@ -1,4 +1,5 @@
 ﻿using Business.Abstract;
+using DataAccess.Abstract;
 using Entities.Concrete;
 using Shared.Results.Abstract;
 using System;
@@ -12,6 +13,13 @@ namespace Business.Concrete
 {
     public class CommentManager : ICommentService
     {
+        ICommentDal _commentDal;
+
+        public CommentManager(ICommentDal commentDal)
+        {
+            _commentDal = commentDal;
+        }
+
         public IDataResult<Comment> Add(Comment entity)
         {
             throw new NotImplementedException();

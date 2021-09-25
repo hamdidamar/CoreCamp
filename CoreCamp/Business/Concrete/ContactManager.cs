@@ -1,4 +1,5 @@
 ﻿using Business.Abstract;
+using DataAccess.Abstract;
 using Entities.Concrete;
 using Shared.Results.Abstract;
 using System;
@@ -12,6 +13,13 @@ namespace Business.Concrete
 {
     public class ContactManager : IContactService
     {
+        IContactDal _contactDal;
+
+        public ContactManager(IContactDal contactDal)
+        {
+            _contactDal = contactDal;
+        }
+
         public IDataResult<Contact> Add(Contact entity)
         {
             throw new NotImplementedException();

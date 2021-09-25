@@ -1,4 +1,5 @@
 ﻿using Business.Abstract;
+using DataAccess.Abstract;
 using Entities.Concrete;
 using Shared.Results.Abstract;
 using System;
@@ -12,6 +13,13 @@ namespace Business.Concrete
 {
     public class WriterManager : IWriterService
     {
+        IWriterDal _writerDal;
+
+        public WriterManager(IWriterDal writerDal)
+        {
+            _writerDal = writerDal;
+        }
+
         public IDataResult<Writer> Add(Writer entity)
         {
             throw new NotImplementedException();

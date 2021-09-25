@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Concrete
 {
-    public class WriterDal : EntityRepositoryBase<Writer, Context>, IWriteDal
+    public class WriterDal : EntityRepositoryBase<Writer, Context>, IWriterDal
     {
     }
 }

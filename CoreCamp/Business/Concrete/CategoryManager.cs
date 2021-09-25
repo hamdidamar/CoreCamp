@@ -1,4 +1,5 @@
 ﻿using Business.Abstract;
+using DataAccess.Abstract;
 using Entities.Concrete;
 using Shared.Results.Abstract;
 using System;
@@ -12,6 +13,13 @@ namespace Business.Concrete
 {
     public class CategoryManager : ICategoryService
     {
+        ICategoryDal _categoryDal;
+
+        public CategoryManager(ICategoryDal categoryDal)
+        {
+            _categoryDal = categoryDal;
+        }
+
         public IDataResult<Category> Add(Category entity)
         {
             throw new NotImplementedException();
@@ -29,7 +37,7 @@ namespace Business.Concrete
 
         public IDataResult<List<Category>> GetAll(Expression<Func<Category, bool>> filter = null)
         {
-            throw new NotImplementedException();
+            return _categoryDal.GetAll();
         }
 
         public IDataResult<Category> Update(Category entity)

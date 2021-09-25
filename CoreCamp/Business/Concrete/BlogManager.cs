@@ -1,4 +1,5 @@
 ﻿using Business.Abstract;
+using DataAccess.Abstract;
 using Entities.Concrete;
 using Shared.Results.Abstract;
 using System;
@@ -12,6 +13,11 @@ namespace Business.Concrete
 {
     public class BlogManager : IBlogService
     {
+        IBlogDal _blogDal;
+        public BlogManager(IBlogDal blogDal)
+        {
+            _blogDal = blogDal;
+        }
         public IDataResult<Blog> Add(Blog entity)
         {
             throw new NotImplementedException();
@@ -29,7 +35,7 @@ namespace Business.Concrete
 
         public IDataResult<List<Blog>> GetAll(Expression<Func<Blog, bool>> filter = null)
         {
-            throw new NotImplementedException();
+            return _blogDal.GetAll();
         }
 
         public IDataResult<Blog> Update(Blog entity)

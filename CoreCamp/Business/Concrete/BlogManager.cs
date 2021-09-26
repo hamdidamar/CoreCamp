@@ -35,7 +35,12 @@ namespace Business.Concrete
 
         public IDataResult<List<Blog>> GetAll(Expression<Func<Blog, bool>> filter = null)
         {
-            return _blogDal.GetAll();
+            return _blogDal.GetAll(filter);
+        }
+
+        public List<Blog> GetBlogsWithCategory()
+        {
+            return _blogDal.GetBlogsWithCategory();
         }
 
         public IDataResult<Blog> Update(Blog entity)

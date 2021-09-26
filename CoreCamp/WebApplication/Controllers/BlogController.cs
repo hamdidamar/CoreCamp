@@ -13,7 +13,13 @@ namespace WebApplication.Controllers
         BlogManager blogManager = new BlogManager(new BlogDal());
         public IActionResult Index()
         {
-            var blogs = blogManager.GetAll().Data;
+            var blogs = blogManager.GetBlogsWithCategory();
+            return View(blogs);
+        }
+
+        public IActionResult BlogReadAll(int id)
+        {
+            var blogs = blogManager.GetAll(b=>b.BlogId == id).Data;
             return View(blogs);
         }
     }

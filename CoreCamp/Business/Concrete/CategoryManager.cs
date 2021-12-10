@@ -22,17 +22,17 @@ namespace Business.Concrete
 
         public IDataResult<Category> Add(Category entity)
         {
-            throw new NotImplementedException();
+            return _categoryDal.Add(entity);
         }
 
         public IResult Delete(Category entity)
         {
-            throw new NotImplementedException();
+            return _categoryDal.Delete(entity);
         }
 
         public IDataResult<Category> Get(Expression<Func<Category, bool>> filter)
         {
-            throw new NotImplementedException();
+            return _categoryDal.Get(filter);
         }
 
         public IDataResult<List<Category>> GetAll(Expression<Func<Category, bool>> filter = null)
@@ -42,7 +42,7 @@ namespace Business.Concrete
 
         public IDataResult<Category> Update(Category entity)
         {
-            throw new NotImplementedException();
+            return _categoryDal.Update(entity);
         }
     }
 }

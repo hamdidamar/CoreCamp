@@ -1,4 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using AutoMapper;
+using Business.Abstract;
+using Business.Concrete;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,6 +11,11 @@ namespace WebApplication.Controllers
 {
     public class CommentController : Controller
     {
+        private readonly ICommentService _commentService;
+        public CommentController(ICommentService commentService)
+        {
+            _commentService = commentService;
+        }
         public IActionResult Index()
         {
             return View();
@@ -18,9 +26,10 @@ namespace WebApplication.Controllers
             return PartialView();
         }
 
-        public PartialViewResult CommentListByBlog()
+        public PartialViewResult CommentListByBlog(int blogId)
         {
-            return PartialView();
+            var comments = _commentService.GetAll(c => c.BlogId == blogId).Data;
+            return PartialView(comments);
         }
     }
 }

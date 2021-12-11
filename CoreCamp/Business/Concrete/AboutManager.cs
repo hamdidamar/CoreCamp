@@ -20,27 +20,27 @@ namespace Business.Concrete
         }
         public IDataResult<About> Add(About entity)
         {
-            throw new NotImplementedException();
+            return _aboutDal.Add(entity);
         }
 
         public IResult Delete(About entity)
         {
-            throw new NotImplementedException();
+            return _aboutDal.Delete(entity);
         }
 
         public IDataResult<About> Get(Expression<Func<About, bool>> filter)
         {
-            throw new NotImplementedException();
+            return _aboutDal.Get(filter);
         }
 
         public IDataResult<List<About>> GetAll(Expression<Func<About, bool>> filter = null)
         {
-            throw new NotImplementedException();
+            return _aboutDal.GetAll(filter);
         }
 
         public IDataResult<About> Update(About entity)
         {
-            throw new NotImplementedException();
+            return _aboutDal.Update(entity);
         }
     }
 }

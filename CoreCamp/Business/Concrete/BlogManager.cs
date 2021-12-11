@@ -20,17 +20,17 @@ namespace Business.Concrete
         }
         public IDataResult<Blog> Add(Blog entity)
         {
-            throw new NotImplementedException();
+            return _blogDal.Add(entity);
         }
 
         public IResult Delete(Blog entity)
         {
-            throw new NotImplementedException();
+            return _blogDal.Delete(entity);
         }
 
         public IDataResult<Blog> Get(Expression<Func<Blog, bool>> filter)
         {
-            throw new NotImplementedException();
+            return _blogDal.Get(filter);
         }
 
         public IDataResult<List<Blog>> GetAll(Expression<Func<Blog, bool>> filter = null)
@@ -45,7 +45,7 @@ namespace Business.Concrete
 
         public IDataResult<Blog> Update(Blog entity)
         {
-            throw new NotImplementedException();
+            return _blogDal.Update(entity);
         }
     }
 }

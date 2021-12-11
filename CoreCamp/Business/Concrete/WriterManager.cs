@@ -22,27 +22,27 @@ namespace Business.Concrete
 
         public IDataResult<Writer> Add(Writer entity)
         {
-            throw new NotImplementedException();
+            return _writerDal.Add(entity);
         }
 
         public IResult Delete(Writer entity)
         {
-            throw new NotImplementedException();
+            return _writerDal.Delete(entity);
         }
 
         public IDataResult<Writer> Get(Expression<Func<Writer, bool>> filter)
         {
-            throw new NotImplementedException();
+            return _writerDal.Get(filter);
         }
 
         public IDataResult<List<Writer>> GetAll(Expression<Func<Writer, bool>> filter = null)
         {
-            throw new NotImplementedException();
+            return _writerDal.GetAll(filter);
         }
 
         public IDataResult<Writer> Update(Writer entity)
         {
-            throw new NotImplementedException();
+            return _writerDal.Update(entity);
         }
     }
 }

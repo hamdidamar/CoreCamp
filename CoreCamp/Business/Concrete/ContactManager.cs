@@ -22,27 +22,27 @@ namespace Business.Concrete
 
         public IDataResult<Contact> Add(Contact entity)
         {
-            throw new NotImplementedException();
+            return _contactDal.Add(entity);
         }
 
         public IResult Delete(Contact entity)
         {
-            throw new NotImplementedException();
+            return _contactDal.Delete(entity);
         }
 
         public IDataResult<Contact> Get(Expression<Func<Contact, bool>> filter)
         {
-            throw new NotImplementedException();
+            return _contactDal.Get(filter);
         }
 
         public IDataResult<List<Contact>> GetAll(Expression<Func<Contact, bool>> filter = null)
         {
-            throw new NotImplementedException();
+            return _contactDal.GetAll(filter);
         }
 
         public IDataResult<Contact> Update(Contact entity)
         {
-            throw new NotImplementedException();
+            return _contactDal.Update(entity);
         }
     }
 }
